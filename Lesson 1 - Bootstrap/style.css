@@ -57,7 +57,10 @@ h1#ovPadRight{
 p#ovPadRight{
     padding-left: 20px;
 }
-x
+
+#research-title{
+    font-size: 60px;
+}
 /* ----------------- Underline Animation CSS -----------------*/
 .hover-underline-animation {
     display: inline-block;

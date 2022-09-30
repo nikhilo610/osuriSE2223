@@ -46,32 +46,80 @@
     <!-- Procedure -->
     <section class="procedure text-left p-2">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-6 p-0 d-flex align-items-center">
-                  <p>Step 1:</p>
-                </div>
-                <div class="col-sm-6 p-0 d-flex align-items-center">
-                  <div class="container">
-                    <h1 class="display-2">Novel Design that Prevents Classroom Chairs from Causing Head Injuries</h1>
-                    <h2>Research Practicum</h2>
-                    </h2>
+          <h1 class="text-center p-2">Procedure Steps for Research Experiment</h1>
+          <hr>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                      <strong>Step 1: Model the Apparatus in Fusion 360</strong>
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                      <div class="row">
+                        <div class="col-sm-6 p3">
+                          <ul class="procedure-text">
+                            <li>Take pictures of the chair in all four views (top, side, front, orthographic)</li>
+                            <li>Record measurements of all parts of the chair</li>
+                            <li>Create the bottom base portion (30" x 3.50")</li>
+                            <li>Create the angled vertical portion (39" x 3.50")</li>
+                            <li>0.635 millimeter diameter for each hole</li>
+                            <li>Create the angled hypotenuse piece
+                              <ul>
+                                <li><img src="/img/hypotenusefusion.png" class="img-fluid hypotenuse-img" alt="Hypotenuse Portion"></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-sm-6">
+                          <img src="/img/fusion360chair.png" class="img-fluid" alt="fusion360 drawing" id="fusion-chair">
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <!-- <table>
-                <thead>
-                    <tr>
-                        <th><strong>Step Number:</strong></th>
-                        <th><strong>Methods Taken:</strong></th>
-                        <th><strong>Image:</strong></th>    
-                    </tr>  
-                </thead>
-                <tr>
-                    <td>Step 1:</td>
-                    <td>Step 2:</td>
-                </tr>
-            </table>
-            -->
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                      <strong>Step 2: Build the Apparatus in the Tech Lab</strong>
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                      <ul class="procedure-text">
+                        <li>Pieces of Fir wood were cut to size using a Delta Vertical Band Saw</li>
+                        <li>A Delta Disc and Belt sander was used to sand off the angled portion for the vertical piece</li>
+                      </ul>
+                      <img class="img-fluid" src="/img/chairapparatus.png" alt="chair apparatus">
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      <strong>Step 3: Use a Vernier Force Sensor to Test the Apparatus</strong>
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                      <strong>Step 4: Compile the Results and Observations</strong>
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFour">
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -82,7 +130,7 @@
     <footer class="p-5 footer text-light text-center position-relative">
         <div class="container">
         <p class="lead">Copyright &copy; SE 2022 Bootstrap Demo</p>
-        <a href="#" class="position-fixed bottom-0 end-0 p-5">
+        <a href="#" class="position-absolute bottom-0 end-0 p-5">
             <i class="bi bi-arrow-up-circle h2 icon-white"></i>
         </a>
         </div>

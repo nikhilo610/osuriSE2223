@@ -5,11 +5,11 @@
 
 .author{
     padding-bottom: 20px;
-    background-color: #8eb7e0;
+    background-color: #bedbf8;
 }
 
 hr{
-    border: 5px solid #000000;
+    border: 3px solid #000000;
 }
 
 .footer{
@@ -20,6 +20,16 @@ hr{
     background-color: #63c1e7;
 }
 
+.chair-resize{
+    width: 550px;
+    border: 10px inset #35aac7;
+    height: auto;
+}
+
+.nav-image{
+    width: 5%;
+    height:auto;
+}
 
 
 .showcase {
@@ -31,7 +41,7 @@ hr{
 }
 
 .nb-bg-color {
-    background-color: #667292 !important;
+    background-color: #023E8A !important;
 }
 
 .author-image {
@@ -39,7 +49,7 @@ hr{
     padding: 30px; 
     box-sizing: border-box;
     border-radius: 50% 20% / 10% 40%;
-    height: auto;
+    height: 800px;
 }
 
 /* --------------------- ID CSS ------------------------ */

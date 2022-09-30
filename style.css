@@ -49,8 +49,21 @@ hr{
     height:auto;
 }
 
+.chair-tipping-img {
+    padding-top: 10px;
+}
+
 .nb-bg-color {
     background-color: #023E8A !important;
+}
+
+.chair-apparatus {
+    width: 450px;
+    height: auto;
+}
+
+.seat-depth {
+    padding-top: 25px;
 }
 
 .author-image {

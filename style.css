@@ -31,6 +31,10 @@ hr{
     height:auto;
 }
 
+.chair-apparatus {
+    width: 300px;
+    height: auto;
+}
 
 .showcase {
     background-color: #bccad6;
@@ -40,8 +44,26 @@ hr{
     color: white;
 }
 
+.hypotenuse-img {
+    width: 350px;
+    height:auto;
+}
+
+.chair-tipping-img {
+    padding-top: 10px;
+}
+
 .nb-bg-color {
     background-color: #023E8A !important;
+}
+
+.chair-apparatus {
+    width: 450px;
+    height: auto;
+}
+
+.seat-depth {
+    padding-top: 25px;
 }
 
 .author-image {
@@ -50,6 +72,13 @@ hr{
     box-sizing: border-box;
     border-radius: 50% 20% / 10% 40%;
     height: 800px;
+}
+
+.procedure-text {
+    font-size: 20px;
+    list-style-type: square;
+    line-height: 2;
+
 }
 
 /* --------------------- ID CSS ------------------------ */
@@ -82,6 +111,12 @@ p#ovPadRight{
 img#newtons-cradle{
     width: 10px;
     height: auto;
+}
+
+#fusion-chair{
+    width: 500px;
+    height: auto;
+    padding-left: 50px;
 }
 
 /* ----------------- Underline Animation CSS -----------------*/

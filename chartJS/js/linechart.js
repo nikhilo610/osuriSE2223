@@ -1,68 +1,67 @@
-// Graph CSV Data using chart.js
+// Graph CSV data using chart.js
+
+
+
 
 async function getData(){
     const response = await fetch('../data/ZonAnn.Ts+dSST.csv');
-    const data = await response.text() // CSV in TEXT file
+    const data = await response.text(); // CSV in TEXT format
+    //console.log(data);
+    const xYears = []; // x-axis labels = year value
+    const yTemps = []; //y-axis value
+    const yNHTemps = []; //y-axis value
+    const ySHTemps = []; //y-axis value
 
-    const xYears = []; // x-axis 
-    const yTemps = []; // y-axis
-    const yNHtemps = []; // northern hemisphere
-    const ySHtemps = []; // southern hemisphere
+    const table = data.split('\n').slice(1);       // split by line and remove the 0th row
+    //console.log(table);
 
-    const table = data.split('\n').slice(1); // split by line and remove the 0th row
 
-    table.forEach(row => {  // operate on each row
-        const columns = row.split(','); // split the row into columns
-        const year = columns[0]; // get the year
-        xYears.push(year); // push the year into the x-axis array
 
-        const temp = parseFloat(columns[1]); // temp deviation
-        yTemps.push(temp+14); // push the temp into the y-axis array
-
-        const nhTemp = parseFloat(columns[2]);
-        yNHtemps.push(temp+14); // push the temp into the y-axis array
-
-        const shTemp = parseFloat(columns[3]); // southern hemisphere temp
-        ySHtemps.push(temp+14); // push the temp into the y-axis array
-
-        
+    table.forEach(row => {              // operate on each row
+        const columns = row.split(','); // split each row into col.
+        const year = columns[0];        // assign year value
+        xYears.push(year);              // Push year value into array xYears
+        const temp = parseFloat(columns[1]);        // global temp deviation
+        yTemps.push(temp + 14);              // push temp value into array yTemps
+        const nhTemp = parseFloat(columns[2]);      // NH temp
+        yNHTemps.push(nhTemp + 14);              // push temp value into array yTemps
+        const shTemp = parseFloat(columns[3]);      // SH temp  
+        ySHTemps.push(shTemp + 14);              // push temp value into array yTemps
     });
-
-    return {xYears, yTemps, yNHtemps, ySHtemps}; // return the arrays
+    return {xYears, yTemps, yNHTemps, ySHTemps}; 
 }
 
 async function createChart(){
-    const data = await getData(); // wait for the data to be fetched
+    const data = await getData();                    // createChart() will wait until getData() processes
     const ctx = document.getElementById('myChart');
-    const degSymbol = String.fromCharCode(176); // degree symbol
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: data.xYears,
-            datasets: [{
-                    label: `Combined Land-Surface Air and Sea-Surface Water Temperature in ${degSymbol}C`,
-                    data: data.yTemps,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                },
+            labels: data.xYears,             // x-axis labels
+            datasets: [
                 {
-                    label: `Combined Land-Surface Air and Sea-Surface Water Temperature in ${degSymbol}C`,
-                    data: data.yNHtemps,
-                    backgroundColor: 'rgba(65, 189, 56, 0.8)',
-                    borderColor: 'rgba(65, 189, 56, 0.8)',
-                    borderWidth: 1
-                },
-                {
-                    label: `Combined Land-Surface Air and Sea-Surface Water Temperature in ${degSymbol}C`,
-                    data: data.ySHtemps,
-                    backgroundColor: 'rgba(39, 232, 245, 0.8)',
-                    borderColor: 'rgba(39, 232, 245, 0.8)',
-                    borderWidth: 1
-                }
-            ]
+                label: 'Combined Global Land-Surface Air and Sea-Surface Water Temperature in C°',
+                data: data.yTemps,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            },
+            {
+                label: 'Combined N.H Land-Surface Air and Sea-Surface Water Temperature in C°',
+                data: data.yNHTemps,
+                backgroundColor: 'rgba(0, 102, 255, 0.2)',
+                borderColor: 'rgba(0, 102, 255, 0.2)',
+                borderWidth: 1
+            },
+            {
+                label: 'Combined S.H Land-Surface Air and Sea-Surface Water Temperature in C°',
+                data: data.ySHTemps,
+                backgroundColor: 'rgba(104, 2, 25, 255)',
+                borderColor: 'rgba(104, 2, 25, 255)',
+                borderWidth: 1
+            }
+        ]
         },
-        
         options: {
             responsive: true,                   // Re-size based on screen size
             scales: {                           // x & y axes display options
@@ -73,37 +72,33 @@ async function createChart(){
                         font: {
                             size: 20
                         },
-                    },
+                    }, 
                     ticks: {
-                        callback: function(val, index) {
+                        callback: function(val, index){
                             return index % 5 === 0 ? this.getLabelForValue(val) : '';
                         },
                         font: {
                             size: 15
-                        }
+                        },
                     },
                 },
                 y: {
-                    beginAtZero: false,        // start y-axis at 0
+                    beginAtZero: false,
                     title: {
                         display: true,
-                        text: 'Global Mean Temperatures (' + degSymbol + 'C)',
+                        text: 'Global Mean Temperature (°C)',
                         font: {
                             size: 20
                         },
-                    },
-                    ticks: {
-                        maxTicksLimit: data.yTemps.length / 10, // limit the number of ticks
-                        font: {
-                            size: 15
-                        }
                     }
-                }
+                },
+                ticks: {
+                    maxTicksLimit: data.yTemps.length/10,
             },
             plugins: {                          // title and legend display options
                 title: {
                     display: true,
-                    text: `Combined Land Surface Air and Sea Surface Water Temperature in ${degSymbol}C`,
+                    text: 'Combined Land Surface Air and Sea Surface Water Temperature in °C',
                     font: {
                         size: 24
                     },
@@ -117,9 +112,10 @@ async function createChart(){
                 }
             }
         }
-        
+        }
     });
-}
+
+    }
 
 createChart();
 getData();

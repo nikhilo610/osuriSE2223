@@ -1,8 +1,5 @@
 // Graph CSV data using chart.js
 
-
-
-
 async function getData(){
     const response = await fetch('../data/researchdata.csv');
     const data = await response.text(); // CSV in TEXT format
